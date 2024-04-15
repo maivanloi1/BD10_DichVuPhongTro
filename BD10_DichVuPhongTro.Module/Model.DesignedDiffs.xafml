@@ -43,9 +43,9 @@
     </ListView>
     <ListView Id="Dien_ListView" IsFooterVisible="True">
       <Columns>
-        <ColumnInfo Id="Ngay" Width="208" />
-        <ColumnInfo Id="SoChuDien" Width="130" />
-        <ColumnInfo Id="DonGia" Width="310">
+        <ColumnInfo Id="Ngay" Width="140" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="SoChuDien" Width="382" />
+        <ColumnInfo Id="DonGia" Width="631" SortIndex="0" SortOrder="Ascending">
           <Summary>
             <ColumnSummaryItem Id="Summary0" SummaryType="Sum" IsNewNode="True" />
           </Summary>

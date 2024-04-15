@@ -7,13 +7,90 @@
     <SchemaModule Name="SystemModule" Version="23.2.3.0" IsNewNode="True" />
   </SchemaModules>
   <Views DefaultListEditor="DevExpress.ExpressApp.Blazor.Editors.DxGridListEditor">
+    <ListView Id="Dien_ListView">
+      <Columns>
+        <ColumnInfo Id="Ngay" Width="180" />
+        <ColumnInfo Id="SoChuDien" Width="350" />
+        <ColumnInfo Id="DonGia" Width="630" />
+      </Columns>
+    </ListView>
+    <ListView Id="GopY_ListView">
+      <Columns>
+        <ColumnInfo Id="Ngay" Width="180" />
+        <ColumnInfo Id="NguoiThues" Width="300" />
+        <ColumnInfo Id="TrangThai" MinWidth="200" />
+        <ColumnInfo Id="NoiDung" Width="350" />
+      </Columns>
+    </ListView>
+    <ListView Id="HopDong_ListView">
+      <Columns>
+        <ColumnInfo Id="Ngay" Width="150" />
+        <ColumnInfo Id="NguoiThues" Width="200" />
+        <ColumnInfo Id="Diens" Width="150" />
+        <ColumnInfo Id="Nuocs" Width="150" />
+        <ColumnInfo Id="KhaiBaos" Width="150" />
+        <ColumnInfo Id="PhongTros" Width="100" />
+        <ColumnInfo Id="PhieuThus" Width="150" />
+        <ColumnInfo Id="PhieuChis" Width="150" />
+      </Columns>
+    </ListView>
+    <ListView Id="KhaiBao_ListView">
+      <Columns>
+        <ColumnInfo Id="Loai" Width="250" />
+        <ColumnInfo Id="Ngay" Width="250" />
+        <ColumnInfo Id="TinhTrang" Width="600" />
+      </Columns>
+    </ListView>
+    <ListView Id="NguoiThue_ListView">
+      <Columns>
+        <ColumnInfo Id="HoTen" Width="250" />
+        <ColumnInfo Id="SDT" Width="150" />
+        <ColumnInfo Id="CCCD" Width="200" />
+        <ColumnInfo Id="QueQuan" Width="550" />
+      </Columns>
+    </ListView>
+    <ListView Id="Nuoc_ListView">
+      <Columns>
+        <ColumnInfo Id="Ngay" Width="200" />
+        <ColumnInfo Id="SoChuDien" Width="250" />
+        <ColumnInfo Id="DonGia" Width="600" />
+      </Columns>
+    </ListView>
     <ListView Id="PhieuChi_ListView">
       <Columns>
-        <ColumnInfo Id="TongTien">
+        <ColumnInfo Id="SoCT" Width="150" />
+        <ColumnInfo Id="Ngay" Width="250" />
+        <ColumnInfo Id="TongTien" Width="250">
           <Summary>
             <ColumnSummaryItem Id="Tổng Chi" SummaryType="Sum" />
           </Summary>
         </ColumnInfo>
+        <ColumnInfo Id="NoiDung" Width="450" />
+      </Columns>
+    </ListView>
+    <ListView Id="PhieuThu_ListView">
+      <Columns>
+        <ColumnInfo Id="SoCT" Width="150" />
+        <ColumnInfo Id="Ngay" Width="250" />
+        <ColumnInfo Id="TongTien" Width="250" />
+        <ColumnInfo Id="NoiDung" Width="450" />
+      </Columns>
+    </ListView>
+    <ListView Id="PhongTro_ListView">
+      <Columns>
+        <ColumnInfo Id="SoPhong" Width="150" />
+        <ColumnInfo Id="TinhTrang" Width="200" />
+        <ColumnInfo Id="LoaiPhong" Width="200" />
+        <ColumnInfo Id="DonGia" Width="500" />
+      </Columns>
+    </ListView>
+    <ListView Id="ThietBi_ListView">
+      <Columns>
+        <ColumnInfo Id="TenTB" Width="200" />
+        <ColumnInfo Id="PhongTros" Width="100" />
+        <ColumnInfo Id="Gia" Width="300" />
+        <ColumnInfo Id="NgayMua" Width="250" />
+        <ColumnInfo Id="ThoiGianBH" Width="250" />
       </Columns>
     </ListView>
   </Views>

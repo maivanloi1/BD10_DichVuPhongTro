@@ -34,6 +34,12 @@ namespace BD10_DichVuPhongTro.Module.BusinessObjects
             base.AfterConstruction();
             // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
         }
+
+        protected override void OnSaving()
+        {
+            base.OnSaving();
+            TienPhong();
+        }
         //private string _PersistentProperty;
         //[XafDisplayName("My display name"), ToolTip("My hint message")]
         //[ModelDefault("EditMask", "(000)-00"), Index(0), VisibleInListView(false)]
@@ -80,12 +86,33 @@ namespace BD10_DichVuPhongTro.Module.BusinessObjects
         private decimal _DonGia;
         [XafDisplayName("Đơn Giá")]
         [ModelDefault("DisplayFormat","### ### ### ### VNĐ")]
+        [ModelDefault("AllowEdit","false")]
         public decimal DonGia
         {
             get { return _DonGia; }
             set { SetPropertyValue<decimal>(nameof(DonGia), ref _DonGia, value); }
         }
 
+        public void TienPhong()
+        {
+            decimal tienphong = 0;
+            if(LoaiPhong.Equals("A") || LoaiPhong.Equals("a"))
+            {
+                tienphong = 3000000;
+            }else if(LoaiPhong.Equals("B") || LoaiPhong.Equals("b"))
+            {
+                tienphong = 2500000;
+            }else if(LoaiPhong.Equals("C") || LoaiPhong.Equals("c"))
+            {
+                tienphong = 2000000;
+            }
+            else
+            {
+                tienphong = 1800000;
+            }
+
+            DonGia = tienphong;
+        }
 
         [DevExpress.Xpo.Aggregated, Association("PT-ThietBi")]
         public XPCollection<ThietBi> ThietBis
