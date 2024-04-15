@@ -33,6 +33,25 @@
   </SchemaModules>
   <Views>
     <ListView Id="ApplicationUser_ListView" Caption="Users" />
+    <ListView Id="Dien_HopDongs_ListView">
+      <Columns>
+        <ColumnInfo Id="Ngay" SortIndex="-1" SortOrder="None" Width="130" />
+        <ColumnInfo Id="NguoiThues" SortIndex="0" SortOrder="Ascending" Width="112" />
+        <ColumnInfo Id="PhieuThus" Width="78" />
+        <ColumnInfo Id="PhieuChis" Width="88" />
+      </Columns>
+    </ListView>
+    <ListView Id="Dien_ListView" IsFooterVisible="True">
+      <Columns>
+        <ColumnInfo Id="Ngay" Width="208" />
+        <ColumnInfo Id="SoChuDien" Width="130" />
+        <ColumnInfo Id="DonGia" Width="310">
+          <Summary>
+            <ColumnSummaryItem Id="Summary0" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
     <DetailView Id="GopY_DetailView">
       <Items>
         <PropertyEditor Id="NguoiThues" PropertyName="NguoiThues" IsNewNode="True" />
@@ -50,6 +69,14 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <ListView Id="GopY_ListView">
+      <Columns>
+        <ColumnInfo Id="Ngay" Width="181" />
+        <ColumnInfo Id="NguoiThues" Width="201" Index="1" />
+        <ColumnInfo Id="TrangThai" Width="121" Index="2" />
+        <ColumnInfo Id="NoiDung" Width="153" Index="3" />
+      </Columns>
+    </ListView>
     <DetailView Id="HopDong_DetailView">
       <Items>
         <PropertyEditor Id="Diens" PropertyName="Diens" IsNewNode="True" />
@@ -77,13 +104,101 @@
         <LayoutItem Id="PhieuChis" ViewItem="PhieuChis" Index="6" RelativeSize="65.18650088809947" IsNewNode="True" />
       </Layout>
     </DetailView>
-    <ListView Id="PhieuChi_ListView" IsFooterVisible="True">
+    <ListView Id="HopDong_ListView">
       <Columns>
-        <ColumnInfo Id="TongTien" Width="90">
+        <ColumnInfo Id="Ngay" Width="128" />
+        <ColumnInfo Id="NguoiThues" Width="94" />
+        <ColumnInfo Id="PhieuThus" Width="72" />
+        <ColumnInfo Id="PhieuChis" Width="77" />
+      </Columns>
+    </ListView>
+    <ListView Id="KhaiBao_ListView">
+      <Columns>
+        <ColumnInfo Id="Loai" Width="185" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="Ngay" Width="198" />
+        <ColumnInfo Id="TinhTrang" SortIndex="0" SortOrder="Ascending" Width="256" />
+      </Columns>
+    </ListView>
+    <ListView Id="NguoiThue_ListView" IsFooterVisible="True">
+      <Columns>
+        <ColumnInfo Id="HoTen" Width="196">
           <Summary>
-            <ColumnSummaryItem Id="Tổng Chi" SummaryType="Sum" IsNewNode="True" />
+            <ColumnSummaryItem Id="Số Người Thuê" SummaryType="Count" IsNewNode="True" />
           </Summary>
         </ColumnInfo>
+        <ColumnInfo Id="SDT" Width="154" />
+        <ColumnInfo Id="CCCD" Width="119" />
+        <ColumnInfo Id="QueQuan" Width="186" />
+      </Columns>
+    </ListView>
+    <ListView Id="Nuoc_ListView" IsFooterVisible="True">
+      <Columns>
+        <ColumnInfo Id="Ngay" Width="205" />
+        <ColumnInfo Id="SoChuDien" Width="233" />
+        <ColumnInfo Id="DonGia" Width="213">
+          <Summary>
+            <ColumnSummaryItem Id="Tổng Tiền Nước" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
+    <ListView Id="PhieuChi_HopDongs_ListView">
+      <Columns>
+        <ColumnInfo Id="Ngay" Width="126" />
+        <ColumnInfo Id="NguoiThues" Width="102" />
+        <ColumnInfo Id="PhongTros" Width="74" />
+        <ColumnInfo Id="PhieuThus" Width="100" />
+      </Columns>
+    </ListView>
+    <ListView Id="PhieuChi_ListView" IsFooterVisible="True">
+      <Columns>
+        <ColumnInfo Id="SoCT" SortIndex="-1" SortOrder="None" Width="156" />
+        <ColumnInfo Id="Ngay" SortIndex="-1" SortOrder="None" Width="138" />
+        <ColumnInfo Id="TongTien" Width="180" SortIndex="0" SortOrder="Ascending">
+          <Summary>
+            <ColumnSummaryItem Id="Tổng Chi" SummaryType="Sum" Index="0" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="NoiDung" Width="302" />
+      </Columns>
+    </ListView>
+    <ListView Id="PhieuThu_HopDongs_ListView">
+      <Columns>
+        <ColumnInfo Id="Ngay" Width="149" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="NguoiThues" Width="94" />
+        <ColumnInfo Id="Diens" SortIndex="0" SortOrder="Ascending" Width="83" />
+      </Columns>
+    </ListView>
+    <ListView Id="PhieuThu_ListView" IsFooterVisible="True">
+      <Columns>
+        <ColumnInfo Id="SoCT" Width="133" />
+        <ColumnInfo Id="Ngay" Width="142" />
+        <ColumnInfo Id="TongTien" Width="132">
+          <Summary>
+            <ColumnSummaryItem Id="Tổng Thu" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="NoiDung" Width="227" />
+      </Columns>
+    </ListView>
+    <ListView Id="PhongTro_ListView" IsFooterVisible="True">
+      <Columns>
+        <ColumnInfo Id="SoPhong" Width="177" SortIndex="-1" SortOrder="None">
+          <Summary>
+            <ColumnSummaryItem Id="Tổng Phòng" SummaryType="Count" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="TinhTrang" Width="144" />
+        <ColumnInfo Id="LoaiPhong" Width="136" />
+        <ColumnInfo Id="DonGia" SortIndex="0" SortOrder="Ascending" Width="187" />
+      </Columns>
+    </ListView>
+    <ListView Id="PhongTro_ThietBis_ListView">
+      <Columns>
+        <ColumnInfo Id="TenTB" Width="176" />
+        <ColumnInfo Id="Gia" Width="160" />
+        <ColumnInfo Id="NgayMua" Width="131" />
+        <ColumnInfo Id="ThoiGianBH" Width="155" />
       </Columns>
     </ListView>
     <DetailView Id="ThietBi_DetailView">
@@ -104,5 +219,18 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <ListView Id="ThietBi_ListView" IsFooterVisible="True">
+      <Columns>
+        <ColumnInfo Id="TenTB" Width="156" />
+        <ColumnInfo Id="PhongTros" Width="105" />
+        <ColumnInfo Id="Gia" Width="130">
+          <Summary>
+            <ColumnSummaryItem Id="Tổng Tiền TB" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="NgayMua" Width="120" />
+        <ColumnInfo Id="ThoiGianBH" Width="131" />
+      </Columns>
+    </ListView>
   </Views>
 </Application>
