@@ -1,12 +1,108 @@
-﻿<?xml version="1.0" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="BD10_DichVuPhongTro">
   <BOModel>
     <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser" Caption="Base User" />
   </BOModel>
+  <NavigationItems>
+    <Items>
+      <Item Id="@397c5f68-f3d9-47fe-a1fd-6c23eca7167a" Caption="Chứng Từ" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="HopDong_ListView" ViewId="HopDong_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="KhaiBao_ListView" ViewId="KhaiBao_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="PhieuChi_ListView" ViewId="PhieuChi_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="PhieuThu_ListView" ViewId="PhieuThu_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Default">
+        <Items>
+          <Item Id="HopDong_ListView" Removed="True" />
+          <Item Id="KhaiBao_ListView" Removed="True" />
+          <Item Id="PhieuChi_ListView" Removed="True" />
+          <Item Id="PhieuThu_ListView" Removed="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
   <Options>
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="23.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="23.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="23.2.3.0" IsNewNode="True" />
+  </SchemaModules>
   <Views>
     <ListView Id="ApplicationUser_ListView" Caption="Users" />
+    <DetailView Id="GopY_DetailView">
+      <Items>
+        <PropertyEditor Id="NguoiThues" PropertyName="NguoiThues" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="GopY" RelativeSize="100">
+              <LayoutItem Id="NguoiThues" ViewItem="NguoiThues" Index="0" RelativeSize="5.113636363636363" IsNewNode="True" />
+              <LayoutItem Id="Ngay" Index="1" RelativeSize="3.6931818181818183" />
+              <LayoutItem Id="TrangThai" Index="2" RelativeSize="3.6931818181818183" />
+              <LayoutItem Id="NoiDung" Index="3" RelativeSize="87.5" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="HopDong_DetailView">
+      <Items>
+        <PropertyEditor Id="Diens" PropertyName="Diens" IsNewNode="True" />
+        <PropertyEditor Id="KhaiBaos" PropertyName="KhaiBaos" IsNewNode="True" />
+        <PropertyEditor Id="NguoiThues" PropertyName="NguoiThues" IsNewNode="True" />
+        <PropertyEditor Id="Nuocs" PropertyName="Nuocs" IsNewNode="True" />
+        <PropertyEditor Id="PhieuChis" PropertyName="PhieuChis" IsNewNode="True" />
+        <PropertyEditor Id="PhieuThus" PropertyName="PhieuThus" IsNewNode="True" />
+        <PropertyEditor Id="PhongTros" PropertyName="PhongTros" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="11.72291296625222">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="HopDong" RelativeSize="100" Caption="Ngày Hợp Đồng">
+              <LayoutItem Id="Ngay" RelativeSize="51.515151515151516" />
+              <LayoutItem Id="NguoiThues" ViewItem="NguoiThues" Index="1" RelativeSize="48.484848484848484" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+        <LayoutItem Id="Diens" ViewItem="Diens" Index="1" RelativeSize="4.618117229129663" IsNewNode="True" />
+        <LayoutItem Id="Nuocs" ViewItem="Nuocs" Index="2" RelativeSize="4.618117229129663" IsNewNode="True" />
+        <LayoutItem Id="KhaiBaos" ViewItem="KhaiBaos" Index="3" RelativeSize="4.618117229129663" IsNewNode="True" />
+        <LayoutItem Id="PhongTros" ViewItem="PhongTros" Index="4" RelativeSize="4.618117229129663" IsNewNode="True" />
+        <LayoutItem Id="PhieuThus" ViewItem="PhieuThus" Index="5" RelativeSize="4.618117229129663" IsNewNode="True" />
+        <LayoutItem Id="PhieuChis" ViewItem="PhieuChis" Index="6" RelativeSize="65.18650088809947" IsNewNode="True" />
+      </Layout>
+    </DetailView>
+    <ListView Id="PhieuChi_ListView" IsFooterVisible="True">
+      <Columns>
+        <ColumnInfo Id="TongTien" Width="90">
+          <Summary>
+            <ColumnSummaryItem Id="Tổng Chi" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
+    <DetailView Id="ThietBi_DetailView">
+      <Items>
+        <PropertyEditor Id="PhongTros" PropertyName="PhongTros" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="ThietBi" RelativeSize="100">
+              <LayoutItem Id="TenTB" RelativeSize="5.113636363636363" />
+              <LayoutItem Id="PhongTros" ViewItem="PhongTros" Index="1" RelativeSize="3.6931818181818183" IsNewNode="True" />
+              <LayoutItem Id="Gia" Index="2" RelativeSize="3.6931818181818183" />
+              <LayoutItem Id="NgayMua" Index="3" RelativeSize="3.6931818181818183" />
+              <LayoutItem Id="ThoiGianBH" Index="4" RelativeSize="83.80681818181819" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
   </Views>
 </Application>

@@ -32,7 +32,7 @@ namespace BD10_DichVuPhongTro.Module.BusinessObjects
         public override void AfterConstruction()
         {
             base.AfterConstruction();
-            // if () { }
+            if (Session.IsNewObject(this)) { Ngay = DateTime.Now; }
             // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
         }
         //private string _PersistentProperty;

@@ -1,7 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application>
-  <NavigationItems NavigationStyle="Accordion">
-  </NavigationItems>
+  <NavigationItems NavigationStyle="Accordion" />
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="23.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="23.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="23.2.3.0" IsNewNode="True" />
+  </SchemaModules>
   <Views DefaultListEditor="DevExpress.ExpressApp.Blazor.Editors.DxGridListEditor">
+    <ListView Id="PhieuChi_ListView">
+      <Columns>
+        <ColumnInfo Id="TongTien">
+          <Summary>
+            <ColumnSummaryItem Id="Tổng Chi" SummaryType="Sum" />
+          </Summary>
+        </ColumnInfo>
+      </Columns>
+    </ListView>
   </Views>
 </Application>

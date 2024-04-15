@@ -32,6 +32,8 @@ namespace BD10_DichVuPhongTro.Module.BusinessObjects
         public override void AfterConstruction()
         {
             base.AfterConstruction();
+            if (Session.IsNewObject(this)) { Ngay = DateTime.Now; }
+
             // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
         }
         //private string _PersistentProperty;
@@ -52,7 +54,7 @@ namespace BD10_DichVuPhongTro.Module.BusinessObjects
 
         private string _SoCT;
         [XafDisplayName("Số Chứng Từ"),Size(45)]
-        [RuleRequiredField("Yêu Cầu SoCT",DefaultContexts.Save,"Phải Nhập Số Chứng Từ")]
+        [RuleRequiredField("Yeu Cau SoCT",DefaultContexts.Save,"Phải Nhập Số Chứng Từ")]
         [RuleUniqueValue,Indexed(Unique =true)]
         public string SoCT
         {

@@ -61,7 +61,7 @@ namespace BD10_DichVuPhongTro.Module.BusinessObjects
 
         private PhongTro _PhongTros;
         [Association("PT-ThietBi")]
-        [XafDisplayName("Của Phóng")]
+        [XafDisplayName("Của Phòng")]
         public PhongTro PhongTros
         {
             get { return _PhongTros; }
